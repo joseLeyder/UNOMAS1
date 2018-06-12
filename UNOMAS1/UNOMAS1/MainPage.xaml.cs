@@ -11,7 +11,7 @@ namespace UNOMAS1
 	{
 		public MainPage()
 		{
-			InitializeComponent();
+			InitializeComponent(); //hola
 		}
 	}
 }
