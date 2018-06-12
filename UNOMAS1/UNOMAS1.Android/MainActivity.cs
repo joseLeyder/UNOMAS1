@@ -14,6 +14,7 @@ namespace UNOMAS1.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            // edrey
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
