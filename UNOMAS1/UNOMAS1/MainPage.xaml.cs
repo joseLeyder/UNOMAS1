@@ -12,6 +12,7 @@ namespace UNOMAS1
 		public MainPage()
 		{
 			InitializeComponent();
+            //mi pito
 		}
 	}
 }
