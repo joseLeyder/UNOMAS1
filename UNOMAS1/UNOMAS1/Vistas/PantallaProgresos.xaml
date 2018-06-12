@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UNOMAS1.Vistas.PantallaProgresos"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:UNOMAS1.Vistas.Item;assembly=UNOMAS1"
+             BackgroundImage="background"
+             Title="Clases">
+    <StackLayout BackgroundColor="Transparent" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Label Margin="12"  Text="FILTRO DE BÚSQUEDA" TextColor="#EFCB4B" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Grid BackgroundColor="Transparent" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Text="Fecha" TextColor="#EFCB4B" FontSize="15" FontAttributes="None" HorizontalTextAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="1" Text="Entrenador" TextColor="#EFCB4B" FontSize="15" FontAttributes="None" HorizontalTextAlignment="Center"/>
+            <DatePicker  Grid.Column="1" Grid.Row="0" x:Name="dtpFecha" Format="dd-MM-yyyy" MinimumDate="01-01-2015" MaximumDate="{x:Static sys:DateTime.Now}" TextColor="#FFFFFF" BackgroundColor="Transparent"/>
+            <Picker Grid.Column="1" Grid.Row="1" x:Name="pckEntrenador" HorizontalOptions="FillAndExpand" Title="- SELECCIONE -" TextColor="#FFFFFF" BackgroundColor="Transparent"/>
+        </Grid>
+        <Frame Padding="0" CornerRadius="15" BackgroundColor="#FFFF67" HeightRequest="40" Margin="60,0,60,0">
+            <Button x:Name="btnBuscar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Text="BUSCAR"  TextColor="#174188" FontSize="20" FontAttributes="Bold" Clicked="BtnBuscar_Clicked"/>
+        </Frame>
+        <ListView x:Name="CouchListView" SeparatorVisibility="None" HasUnevenRows="true" BackgroundColor="Transparent" Margin="0,5,0,0" ItemTapped="CouchListView_ItemTapped">
+            <ListView.Header>
+                <Frame Padding="0" CornerRadius="15" BackgroundColor="#EFCB4B" HeightRequest="40" Margin="25,5,25,5">
+                    <Label Text="Entrenadores encontrados" FontSize="20" FontAttributes="Bold" TextColor="#174188" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                </Frame>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <local:ItemEntrenador/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

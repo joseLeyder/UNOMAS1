@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundImage="background"
+             x:Class="UNOMAS1.Vistas.PantallaPrincipal"
+            Title="Login">
+    <ScrollView>
+        <StackLayout>
+
+            <Image Source="unomaslogo2.png" HorizontalOptions="Center" HeightRequest="100" WidthRequest="300"></Image>
+
+            <Frame BackgroundColor="#EFCB4B" HorizontalOptions="Center" CornerRadius="20" Padding="3" Margin="5">
+                <Frame BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="Center" CornerRadius="20" Padding="0">
+                    <Entry x:Name="txtUsuario" VerticalOptions="Center" TextColor="#5B5B5B" FontSize="20" Margin="15,10" HorizontalTextAlignment="Center" Placeholder="usuario o correo eléctronico" PlaceholderColor="#5B5B5B" BackgroundColor="Transparent" Text="{Binding User,Mode=TwoWay}">
+
+                    </Entry>
+                </Frame>
+            </Frame>
+            <Frame BackgroundColor="#EFCB4B" HorizontalOptions="Center" WidthRequest="300" CornerRadius="20" Padding="3" Margin="5">
+                <Frame BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="20" Padding="0">
+                    <Entry x:Name="txtContraseña" TextColor="#5B5B5B" FontSize="20" Margin="15,10,15,10" HorizontalTextAlignment="Center" Placeholder="contraseña" PlaceholderColor="#5B5B5B" BackgroundColor="Transparent" Text="{Binding Password,Mode=TwoWay}" IsPassword="True">
+
+                    </Entry>
+                </Frame>
+            </Frame>
+            <Frame CornerRadius="10" Padding="0"  BackgroundColor="#EFCB4B" HorizontalOptions="Center" Margin="0,5,0,20">
+                <Button x:Name="BtnIniciar"  HeightRequest="50"   BackgroundColor="Transparent" Text="Iniciar sesión" FontSize="20" FontAttributes="Bold" TextColor="#174188" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding SaveCommand}"/>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

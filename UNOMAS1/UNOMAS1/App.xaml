@@ -1,10 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
              x:Class="UNOMAS1.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!--TEXT COLOR-->
+            <Color x:Key="PrimaryColor">#000000</Color>
+            <Color x:Key="SecondaryColor">#5B5B5B</Color>
 
-	</Application.Resources>
+            <!--MAIN MENU COLOR-->
+            <Color x:Key="MenuTextColor">#174188</Color>
+            <Color x:Key="FooterTextColor">#FFFFFF</Color>
+            <Color x:Key="BarTextColor">#EFCB4B</Color>
+            <Color x:Key="BarBackgroundColor">#174188</Color>
+
+            <!--FONT SIZE TEXT-->
+            <x:Double x:Key="MenuFontSize">20</x:Double>
+            <x:Double x:Key="TitleFontSize">24</x:Double>
+            <x:Double x:Key="LabelFontSize">18</x:Double>
+
+            <!-- Styles -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource BarBackgroundColor}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

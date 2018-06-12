@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UNOMAS1.Vistas.PantallaRegistrar"
+             BackgroundImage="background"
+             Title="Registrar"
+             >
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Spacing="0">
+        <Frame CornerRadius="20" Padding="0,0,10,10"  BackgroundColor="#EFCB4B" HorizontalOptions="Center" Margin="0,5,0,20">
+            <Label Text="Elige un tipo de registro" HorizontalTextAlignment="Center" TextColor="#174188" FontSize="18" HorizontalOptions="FillAndExpand" FontAttributes="Bold" Margin="10,10,10,10" />
+        </Frame>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="80*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="1" Grid.Column="0" CornerRadius="50" BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0,20,0,0">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0">
+
+                    <Frame CornerRadius="20" Padding="10,0"  BackgroundColor="#174188" HorizontalOptions="Center" Margin="0,5,0,20">
+                        <StackLayout Orientation="Horizontal">
+                            <Image  WidthRequest="30"  HeightRequest="30" Source="wod.png" Margin="10"></Image>
+                            <Button x:Name="BtnCliente"  HeightRequest="50"   BackgroundColor="Transparent" Text="Cliente" FontSize="16" FontAttributes="Bold" TextColor="#EFCB4B" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding ClienteCommand}"/>
+                        </StackLayout>
+                        
+                    </Frame>
+                    <Frame CornerRadius="20" Padding="10,0"  BackgroundColor="#174188" HorizontalOptions="Center" Margin="0,5,0,20">
+                        <StackLayout  Orientation="Horizontal">
+                            <Image  WidthRequest="30"  HeightRequest="30" Source="user.png" Margin="10"></Image>
+                            <Button x:Name="BtnEtrenador"  HeightRequest="50"   BackgroundColor="Transparent" Text="Entrenador" FontSize="16" FontAttributes="Bold" TextColor="#EFCB4B" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding EntrenadorCommand}"/>
+                        </StackLayout>
+                        
+                    </Frame>
+
+                    <Image Source="unomaslogo.png" BackgroundColor="White" Aspect="AspectFit" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="80"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </StackLayout>
+</ContentPage>

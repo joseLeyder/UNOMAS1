@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="UNOMAS1.Vistas.PantallaRegistrarEntrenador"
+             BackgroundImage="background"
+             Title="Registrar Entrenador">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Spacing="0">
+        <StackLayout Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="15">
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" x:Name="BtnTake" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="Transparent" Image="takephoto.png"/>
+                <Image Grid.Column="1" Grid.Row="0" x:Name="image" HeightRequest="160" HorizontalOptions="Center" Aspect="AspectFit" Source="user.png"/>
+                <Button Grid.Column="2" Grid.Row="0" x:Name="BtnPick" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="Transparent" Image="pickphoto.png"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="Transparent">
+            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" IsClippedToBounds="True">
+                <Frame CornerRadius="40" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#174188" Opacity="0.8" Padding="0">
+                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Spacing="0">
+                        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="20,10,10,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="60"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Text="Nombre*:" TextColor="#FFFFFF" FontSize="16"/>
+                            <Frame Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="10" Padding="0" BackgroundColor="#EFCB4B" Margin="0">
+                                <Frame CornerRadius="10" Padding="0" BackgroundColor="#174188" Margin="2">
+                                    <Entry  x:Name="txtNombre" TextColor="#FFFFFF" BackgroundColor="Transparent" >
+
+                                    </Entry>
+                                </Frame>
+                            </Frame>
+                            <Label Grid.Column="0" Grid.Row="2" Text="Fecha de Nacimiento*:" TextColor="#FFFFFF" FontSize="16" VerticalTextAlignment="Center"/>
+                            <Frame Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" CornerRadius="10" Padding="0" BackgroundColor="#EFCB4B" Margin="0">
+                                <Frame CornerRadius="10" Padding="0" BackgroundColor="#174188" Margin="2">
+                                    <DatePicker x:Name="dtpFecNac" Format="dd-MM-yyyy" MinimumDate="01-01-1900" MaximumDate="{x:Static sys:DateTime.Now}" TextColor="#FFFFFF" BackgroundColor="Transparent"/>
+                                </Frame>
+                            </Frame>
+                            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Text="Domicilio*:" TextColor="#FFFFFF" FontSize="16"/>
+                            <Frame Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" CornerRadius="10" Padding="0" BackgroundColor="#EFCB4B" Margin="0">
+                                <Frame CornerRadius="10" Padding="0" BackgroundColor="#174188" Margin="2">
+                                    <Entry  x:Name="txtDomicilio" TextColor="#FFFFFF" BackgroundColor="Transparent">
+
+                                    </Entry>
+                                </Frame>
+                            </Frame>
+                            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Text="Experiencia*:" TextColor="#FFFFFF" FontSize="16"/>
+                            <Frame Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" CornerRadius="10" Padding="0" BackgroundColor="#EFCB4B" Margin="0">
+                                <Frame CornerRadius="10" Padding="0" BackgroundColor="#174188" Margin="2">
+                                    <Entry  x:Name="txtExperiencia" TextColor="#FFFFFF" BackgroundColor="Transparent"  Keyboard="Numeric">
+
+                                    </Entry>
+                                </Frame>
+                            </Frame>
+                            <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Text="Correo*:" TextColor="#FFFFFF" FontSize="16"/>
+                            <Frame Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" CornerRadius="10" Padding="0" BackgroundColor="#EFCB4B" Margin="0">
+                                <Frame CornerRadius="10" Padding="0" BackgroundColor="#174188" Margin="2">
+                                    <Entry  x:Name="txtCorreo" TextColor="#FFFFFF" BackgroundColor="Transparent" >
+
+                                    </Entry>
+                                </Frame>
+                            </Frame>
+                            <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Text="Usuario*:" TextColor="#FFFFFF" FontSize="16"/>
+                            <Frame Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" CornerRadius="10" Padding="0" BackgroundColor="#EFCB4B" Margin="0">
+                                <Frame CornerRadius="10" Padding="0" BackgroundColor="#174188" Margin="2">
+                                    <Entry  x:Name="txtUsuario" TextColor="#FFFFFF" BackgroundColor="Transparent" >
+
+                                    </Entry>
+                                </Frame>
+                            </Frame>
+                            <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="3" Text="Contraseña*:" TextColor="#FFFFFF" FontSize="16"/>
+                            <Frame Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" CornerRadius="10" Padding="0" BackgroundColor="#EFCB4B" Margin="0">
+                                <Frame CornerRadius="10" Padding="0" BackgroundColor="#174188" Margin="2">
+                                    <Entry  x:Name="txtPass1" TextColor="#FFFFFF" BackgroundColor="Transparent"  IsPassword="True">
+
+                                    </Entry>
+                                </Frame>
+                            </Frame>
+                            <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" Text="Confirmar Contraseña*:" TextColor="#FFFFFF" FontSize="16"/>
+                            <Frame Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3" CornerRadius="10" Padding="0" BackgroundColor="#EFCB4B" Margin="0">
+                                <Frame CornerRadius="10" Padding="0" BackgroundColor="#174188" Margin="2">
+                                    <Entry  x:Name="txtPass2" TextColor="#FFFFFF" BackgroundColor="Transparent"  IsPassword="True">
+
+                                    </Entry>
+                                </Frame>
+                            </Frame>
+                            <Frame Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="3" BackgroundColor="#FFFF67" Padding="0" CornerRadius="10" Margin="30,10,30,10">
+                                <Button x:Name="BtnGuardar" BackgroundColor="Transparent" Text="Guardar Datos" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TextColor="#174188" Clicked="BtnGuardar_Clicked"/>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

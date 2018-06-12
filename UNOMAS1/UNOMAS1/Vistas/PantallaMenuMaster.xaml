@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UNOMAS1.Vistas.PantallaMenuMaster"
+              Title="Home"
+             Icon="menu"
+             BackgroundColor="White">
+    <StackLayout Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+        <Frame CornerRadius="30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" BackgroundColor="#EFCB4B">
+            <StackLayout Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                <BoxView BackgroundColor="#EFCB4B" HeightRequest="30" WidthRequest="-1"/>
+                <Grid HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" Margin="0,0,0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Column="0" Grid.Row="0" x:Name="imgPerfil" BackgroundColor="Transparent" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="80" Source="user.png"/>
+                    <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <Label x:Name="lblNombre" TextColor="#174188" Style="{DynamicResource SubtitleStyle}" FontSize="20" FontAttributes="Bold" Text="{Binding Nombre,Mode=TwoWay}"/>
+                        <Label x:Name="lbltuser" TextColor="#174188" Style="{DynamicResource SubtitleStyle}" FontSize="16" Text="{Binding Tipo,Mode=TwoWay}"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <ListView 
+    ItemsSource="{Binding Menu}"
+    HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateCommand}">
+                                </TapGestureRecognizer>
+                            </Grid.GestureRecognizers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image 
+              WidthRequest="50"
+              HeightRequest="50"
+              Source="{Binding Icon}"></Image>
+                            <Label 
+              Grid.Column="1"
+              VerticalOptions="Center"
+              TextColor="{StaticResource MenuTextColor}"
+              Text="{Binding Title}"
+              FontAttributes="Bold"></Label>
+                            <Image  Grid.Column="2" Source="forward.png" BackgroundColor="Transparent" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center"  WidthRequest="50"
+              HeightRequest="50"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Image Source="unomaslogo.png" BackgroundColor="Transparent" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="80" Margin="0,0,0,15"/>
+        <Label x:Name="lblCreativa" Text="Powered by CID" HeightRequest="55" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="#5B5B5B"  TextColor="{StaticResource FooterTextColor}"/>
+    </StackLayout>
+</ContentPage>

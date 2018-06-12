@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UNOMAS1.Vistas.PantallaPreviewEntrenamiento"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:local="clr-namespace:UNOMAS1.Vistas.Item;assembly=UNOMAS1"
+             BackgroundImage="background"
+             Title="Previsualización de ejercicios">
+    <StackLayout BackgroundColor="Transparent" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Frame CornerRadius="10" BackgroundColor="#EFCB4B" Padding="0" Margin="10">
+            <Label x:Name="lblNombre" Text="{Binding nombre}" FontSize="24" FontAttributes="Bold" TextColor="#174188" HorizontalOptions="Center"/>
+        </Frame>
+        <Grid BackgroundColor="Transparent" Margin="30,10,30,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" FontAttributes="Italic" FontSize="16" TextColor="#FFFFFF" Text="{Binding fecha,StringFormat='Fecha: {0}'}" x:Name="lblFecha" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Grid.Column="0" Grid.Row="1" FontAttributes="Italic" FontSize="16" TextColor="#FFFFFF" Text="{Binding dificultad,StringFormat='Dificultad: {0}'}" x:Name="lblDificultad" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Grid.Column="0" Grid.Row="2" FontAttributes="Italic" FontSize="16" TextColor="#FFFFFF" Text="{Binding totalRounds,StringFormat='Rounds: {0}'}" x:Name="lblRounds" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="3" Spacing="0" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <ffimageloading:CachedImage Source="temporizador" HeightRequest="30" Aspect="AspectFit"/>
+                <StackLayout BackgroundColor="Transparent" Spacing="0" Margin="0" Padding="0">
+                    <Label FontSize="16" TextColor="#EFCB4B" Text="{Binding tiempoSegundos}" x:Name="lblTiempo"/>
+                    <Label FontSize="14" TextColor="#EFCB4B" Text="SEG"/>
+                </StackLayout>
+            </StackLayout>
+            <Label Grid.Column="1" Grid.Row="0" Text="Materiales" TextColor="#FFFFFF" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center"/>
+            <ListView Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" x:Name="MaterialListView" IsVisible="False" SeparatorVisibility="None" HasUnevenRows="true" BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <ffimageloading:CachedImage x:Name="imgIcon" Source="{Binding icon}" HeightRequest="100" Aspect="AspectFit" HorizontalOptions="Center"/>
+        <Label x:Name="lblEspacio" Text="{Binding espacio}" FontAttributes="Italic" FontSize="18" TextColor="#EFCB4B" Margin="15" HorizontalOptions="Center"/>
+        <ListView x:Name="EjercicioListView" IsVisible="False" SeparatorVisibility="None" HasUnevenRows="true" BackgroundColor="Transparent" >
+            <ListView.Header>
+                <StackLayout>
+                    <Grid BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Text="Estimulación" TextColor="#FFFFFF" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Ejercicio" TextColor="#FFFFFF" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                       
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Frame CornerRadius="10" Margin="50,10,50,10" Padding="0" BackgroundColor="#FFFF67">
+            <Button x:Name="btnIniciar" Text="INICIAR" FontSize="20" FontAttributes="Bold" TextColor="#174188" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="Transparent"/>
+        </Frame>
+    </StackLayout>
+</ContentPage>

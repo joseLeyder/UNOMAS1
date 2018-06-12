@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BackgroundImage="background"
+             x:Class="UNOMAS1.Vistas.PantallaEncuesta">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Spacing="0">
+        <ffimageloading:CachedImage Source="unomaslogo2.png" BackgroundColor="Transparent" Aspect="AspectFit" HorizontalOptions="Center" HeightRequest="80" Margin="15"/>
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsClippedToBounds="True">
+            <Frame BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" CornerRadius="20">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Spacing="0">
+                    <StackLayout x:Name="Contenido" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,5,10,5" Margin="40,5,40,5"/>
+                    <Frame BackgroundColor="#629ADD" Padding="0" CornerRadius="20" HeightRequest="40" Margin="40,10,40,10">
+                        <Button x:Name="btnEnviar" Text="ENVIAR" FontAttributes="Bold" FontSize="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  TextColor="#FFFFFF" BackgroundColor="Transparent"/>
+                    </Frame>
+                    <BoxView WidthRequest="-1" HeightRequest="20" BackgroundColor="#FFFFFF"/>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

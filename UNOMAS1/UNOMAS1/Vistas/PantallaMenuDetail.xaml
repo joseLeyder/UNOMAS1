@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              BackgroundImage="background"
+             x:Class="UNOMAS1.Vistas.PantallaMenuDetail"
+             Title="Inicio">
+  <StackLayout Padding="10">
+        <Label Text="BIENVENIDO" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center"
+               TextColor="White"
+               FontSize="20" FontAttributes="Bold"/>
+        <Label Text="{Binding Nombre,Mode=TwoWay}" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center"
+               TextColor="White"
+               FontSize="16" FontAttributes="Bold"/>
+        <Label Text="{Binding Tipo,Mode=TwoWay}" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center"
+               FontSize="10"
+               TextColor="White"/>
+    </StackLayout>
+</ContentPage>

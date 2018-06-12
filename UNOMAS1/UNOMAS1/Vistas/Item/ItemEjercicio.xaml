@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="UNOMAS1.Vistas.Item.ItemEjercicio">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Spacing="0">
+        <Frame CornerRadius="20" Padding="0" Margin="2" BackgroundColor="#629ADD" Opacity="0.8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Frame CornerRadius="20" Padding="0" Margin="2" BackgroundColor="#174188" Opacity="0.9" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding id_round}" FontSize="16" TextColor="#EFCB4B" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding ejercicio}" FontSize="16" TextColor="#EFCB4B" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <ffimageloading:CachedImage Grid.Row="0" Grid.Column="2" Source="opcion" Aspect="AspectFit" HeightRequest="25" Margin="2"/>
+                </Grid>
+            </Frame>
+        </Frame>
+    </StackLayout>
+</ContentPage>
