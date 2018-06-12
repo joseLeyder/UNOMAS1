@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>UNOMAS1.Droid</RootNamespace>
     <AssemblyName>UNOMAS1.Android</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -98,6 +98,12 @@
     <AndroidResource Include="Resources\values\styles.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UNOMAS1\UNOMAS1.csproj">
+      <Project>{5DC5E04A-3E00-4EDD-92A9-E5CA18824E3B}</Project>
+      <Name>UNOMAS1</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\background.png" />
@@ -236,12 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Youtube50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UNOMAS1\UNOMAS1.csproj">
-      <Project>{eca84776-50f1-4fba-912c-3e10b48c497f}</Project>
-      <Name>UNOMAS1</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
